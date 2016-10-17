@@ -6,25 +6,7 @@ class Pokemon
     @attack = attack
     @hp = hp
   end
-#battle自体のメソッドを作るが変数の引き渡しが分からず
-=begin
-  def battle(instance1,instance2)
-    puts "*****************"
-    puts "戦闘開始"
-    puts "*****************"
-    i = 0
-    loop do
-      puts "---------"
-      puts "第#{i}戦闘"
-      puts "---------"
-      sleep(1)
-      i += 1
-      if i == 7 then
-        break
-      end
-    end
-  end
-=end
+
 end
 
 pikachu = Pokemon.new("ピカチュウ",3,30)
@@ -34,8 +16,7 @@ puts "*****************"
 puts "戦闘開始#{pikachu.name}vs#{zenigame.name}"
 puts "*****************"
 
-#毎回のダメージポイントを決める
-#どちらの場合も０で初期化しておく
+
 zdamage = 0
 pdamage = 0
 if pikachu.attack > zenigame.attack then
@@ -59,7 +40,7 @@ loop do
   puts "#{pikachu.name}の残りHP: #{pikachu.hp}"
   puts "#{zenigame.name}の残りHP: #{zenigame.hp}"
 
-#勝敗でのルー部抜け
+#勝敗でのループ抜け
   if pikachu.hp <= 0 then
     sleep(2)
     puts "決着!!"
@@ -74,7 +55,7 @@ loop do
     break
   end
 #1秒のインターバル
-#上に書くと決着時に３秒待つことになる
+
   sleep(1)
   i += 1
 
